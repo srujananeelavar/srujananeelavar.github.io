@@ -4,7 +4,6 @@ main:
     url: /about/
 
   - title: "CV"
-    url: /files/SrujanaNeelavar_resume.pdf
-
+    url: /files/SrujanaNeelavar_Resume.pdf
   - title: "Projects"
     url: /projects/
