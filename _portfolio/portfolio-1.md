@@ -1,6 +1,6 @@
 ---
 title: "Optimizing VEGFR2 Inhibitor Discovery: <em>Leveraging Molecular Descriptors for Streamlined Drug Development</em>"
-excerpt: "<img src='/images/drugdiscoveryml.png'>"
+excerpt: "Implementation of RCPO into stable-baselines3 PPO. <br/><img src='/images/drugdiscoveryml.png'>"
 collection: Projects
 ---
 
