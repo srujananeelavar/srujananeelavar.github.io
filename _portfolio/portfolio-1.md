@@ -1,6 +1,6 @@
 ---
 title: "Optimizing VEGFR2 Inhibitor Discovery: <em>Leveraging Molecular Descriptors for Streamlined Drug Development</em>"
-excerpt: <br/><img align = "center" src='/images/drugdiscoveryml.png'>
+excerpt: <br/><img align = "right" src='/images/drugdiscoveryml.png' style="width:100px;height:100px;">
 collection: Projects
 ---
 
