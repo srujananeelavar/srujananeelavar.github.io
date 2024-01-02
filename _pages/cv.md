@@ -20,7 +20,7 @@ redirect_from:
   <span style="color:grey">Major GPA: 9.40/10.00 Rank: 1/45 (Department Gold Medalist)
   </span>
 
-# Work experience
+# Work Experience
 
 - **Graduate Research Assistant**, _Pittsburgh, PA_ <span style="color:grey">— Jan 2023 – Present</span>
 
