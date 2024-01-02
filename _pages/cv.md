@@ -12,7 +12,8 @@ redirect_from:
 # Education
 
 - **Master of Science in Computational Biology**, Carnegie Mellon University, _Pittsburgh, PA_ <span style="color:grey">— May 2024</span>
-  <span style="color:grey">Relevant Coursework: Programming for Scientists, Algorithms and Advanced Data Structures, Essential Mathematics and Statistics, Machine Learning, Computational Genomics, Advanced Microbiology, Modeling and Simulation, Advanced Quantitative Genetics, Bioinformatics Data Integration Practicuum, Computational Medicine, Automation of Scientific Research</span>
+
+  <span style="color:grey">**Relevant Coursework:** Programming for Scientists, Algorithms and Advanced Data Structures, Essential Mathematics and Statistics, Machine Learning, Computational Genomics, Advanced Microbiology, Modeling and Simulation, Advanced Quantitative Genetics, Bioinformatics Data Integration Practicuum, Computational Medicine, Automation of Scientific Research</span>
 
 - **Bachelor of Engineering in Biotechnology**, Visvesvaraya Technological University, _Bangalore, India_ <span style="color:grey">— Aug 2021</span>
 
