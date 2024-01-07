@@ -4,7 +4,7 @@ excerpt: The proposed project aims to identify molecular descriptors that aid in
 collection: Projects
 ---
 
-<span style="color:gray"> _Computational Medicine (02718) Course Project_
+<span style="color:gray"> _Computational Medicine (02718) Course Project (Nov 2023)_
 
 _This [Google Colab notebook](https://colab.research.google.com/drive/1SXprNKoZVDaa273QBNnEJYICoj1Gw05d?usp=sharing) contains the code pertaining to this project._
 
@@ -134,7 +134,7 @@ We assessed the performance of our XGBoost Regressor using the coefficient of de
 
 ![Figure 6: Chemical Substructures and Inhibitor Activity; Table 1: Chemical substructures with highest correlation to inhibitor activity.](/images/figure5.png)
 
-_**Figure 6**: Chemical Substructures and Inhibitor Activity; Table 1: Chemical substructures with highest correlation to inhibitor activity._
+_**Figure 6**: Chemical Substructures and Inhibitor Activity; **Table 1**: Chemical substructures with highest correlation to inhibitor activity._
 
 <p style='text-align: justify;'> 
 Figure 6 emphasizes key chemical substructures, identified from the top molecular descriptors by the XGBRegressor, exhibiting a strong correlation with inhibitor activity. The analysis presented in Figure 6 allows us to draw the inference that compounds harboring any of these highlighted substructures hold promise as potential VEGFR2 inhibitors. This insight provides a targeted and strategic approach for further exploration and validation in the pursuit of novel inhibitors with enhanced efficacy in inhibiting VEGFR2 activity.
