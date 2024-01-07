@@ -15,6 +15,7 @@ Previous research successfully identified potential inhibitory molecules through
 # <span style="color:#007ea7"> Data
 
 ![Figure 1: Data Acquisition and Preprocessing Workflow](/images/dataSection.jpg)
+_Figure 1: Data Acquisition and Preprocessing Workflow_
 
 We employed the ChEMBL database for its comprehensive collection of compounds inhibiting VEGFR2. ChEMBL, being a robust bioactivity database, provides valuable information on molecular targets, including VEGFR2, making it a suitable resource for our investigation. Our specific query string was "VEGFR2," and we identified the Target ID as CHEMBL279.
 
@@ -25,6 +26,7 @@ Subsequently, to enhance data quality, we eliminated the rows with missing value
 # <span style="color:#007ea7"> Methods
 
 ![Figure 2: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis](/images/methodfinal.jpg)
+_Figure 2: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis_
 
 ## Exploratory Data Analysis
 
@@ -53,6 +55,7 @@ For a nuanced interpretation, we categorized true and predicted pIC50 values int
 ## Identifying the Top 20 Molecular Descriptors
 
 ![Figure 3: op 20 Important Features from XGBRegressor](/images/top20.png)
+_Figure 3: op 20 Important Features from XGBRegressor_
 
 In our pursuit to pinpoint the crucial molecular descriptors influencing VEGFR2 inhibitors, we leveraged the feature*importances* attribute within the XGBoostRegressor Model. Our focus was on extracting the top 20 molecular descriptors and delineating their significance in predicting pIC50 values. To enhance interpretability, we crafted a visually informative bar plot encapsulating the importance of each feature (Figure 3).
 
@@ -65,19 +68,22 @@ This holistic methodology not only strengthens the robustness of our analysis bu
 
 ## Exploratory Data Analysis
 
-![Figure 4: Confusion Matrix](/images/exploratorymannu.png)
+![Figure 4: Mann-Whitney U Test Results](/images/exploratorymannu.jpg)
+_Figure 4: Mann-Whitney U Test Results_
 
 The Mann-Whitney U Test results reveal significant differences between inhibitors belonging to the two bioactivity classes (active and inactive) (Figure 4). All five cases, including pIC50 values and four Lipinski descriptors (MW value, Log P value, NumDonors value, and NumAcceptors value), rejected the null hypothesis at the 0.05 significance level. Notably, the median values of Lipinski descriptors in our dataset adhere to Lipinski’s rule of five guidelines, reinforcing their compliance. Impressively, over 6000 inhibitors from our dataset are in accordance with Lipinski’s rule of five.
 
 ## Model Evaluation
 
 ![Figure 5: Confusion Matrix](/images/confusionmatrix.png)
+_Figure 5: Confusion Matrix_
 
 We assessed the performance of our XGBoost Regressor using the coefficient of determination metric and achieved R2 = 0.513. This indicates that our descriptors can account for 51% of the variability in the dependent variable, namely the pIC50 values. To enhance interpretability, we reclassified the pIC50 values into three classes, leading to the computation of a confusion matrix and accuracy metrics. Impressively, we attained a commendable classification accuracy of 78%. Further analysis of the confusion matrix (Figure 5) highlights the model’s efficacy, particularly in accurately predicting pIC50 values for a substantial portion of active inhibitors (86% of true active inhibitors).
 
 ## Top Molecular Descriptors
 
 ![Figure 6: Chemical Substructures and Inhibitor Activity; Table 1: Chemical substructures with highest correlation to inhibitor activity.](/images/figure5.png)
+_Figure 6: Chemical Substructures and Inhibitor Activity; Table 1: Chemical substructures with highest correlation to inhibitor activity._
 
 Figure 6 emphasizes key chemical substructures, identified from the top molecular descriptors by the XGBRegressor, exhibiting a strong correlation with inhibitor activity. The analysis presented in Figure 6 allows us to draw the inference that compounds harboring any of these highlighted substructures hold promise as potential VEGFR2 inhibitors. This insight provides a targeted and strategic approach for further exploration and validation in the pursuit of novel inhibitors with enhanced efficacy in inhibiting VEGFR2 activity.
 
