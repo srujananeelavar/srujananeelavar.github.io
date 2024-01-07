@@ -62,10 +62,6 @@ The dataset was divided into training and testing sets using an 80:20 ratio. Thi
 
 ### Model Training and Fitting
 
-![Figure 3: op 20 Important Features from XGBRegressor](/images/top20.png)
-
-_**Figure 3**: op 20 Important Features from XGBRegressor_
-
 <p style='text-align: justify;'> 
 kNN, or k-Nearest Neighbors, stands as a noteworthy supervised learning algorithm falling within the realm of instance-based, lazy learning methods. As a non-parametric approach, it refrains from making explicit assumptions about the functional form characterizing the underlying data distribution. The central concept driving kNN involves classifying a data point by leveraging the majority class within its k nearest neighbors within the feature space. These "nearest neighbors" encompass data points sharing similar features or attributes.
 </p>
@@ -104,4 +100,112 @@ The generality of the HMM framework lies in its flexibility to model diverse sys
 
 <p style='text-align: justify;'> 
 In the figure below, the aij probabilities are the transition probabilities. The bij probabilities are the emission probabilities.
+</p>
+
+### Protein Secondary Structure Prediction HMM Model
+
+<p style='text-align: justify;'> 
+The initial dataset was preprocessed by removing duplicate sequences to ensure data integrity. The first step involved calculating the initial state probabilities and transition probabilities. The initial state probabilities were derived by analyzing the frequency of each hidden state at the beginning of the sequences. Transition probabilities were determined by counting the occurrences of transitions between consecutive hidden states. Emission probabilities were calculated by analyzing the observed sequences in relation to the hidden states. The likelihood of observing a particular amino acid given a hidden state was computed, forming the emission probabilities.
+</p>
+
+<p style='text-align: justify;'> 
+The dataset was split into training and testing sets using the train_test_split function from the sklearn library. The training set comprised 80% of the data, while the testing set comprised the remaining 20%.
+A Categorical Hidden Markov Model (HMM) with three hidden states was implemented using the hmmlearn library. The model parameters, including initial state probabilities, transition probabilities, and emission probabilities, were set based on the calculated probabilities from the training data by maximum likelihood estimation (MLE). Each hidden state had the capacity to emit 25 symbols corresponding to the possible standard and non-standard amino acid characters.
+</p>
+
+<p style='text-align: justify;'> 
+The trained HMM model was used to predict hidden states for sequences in the testing set using the Viterbi algorithm. The predictions were then compared with the actual hidden states, and the Levenshtein distance was computed to quantify the dissimilarity between predicted and actual sequences.
+</p>
+
+<p style='text-align: justify;'> 
+A customized function was developed to visualize the predicted and actual sequences, providing insights into the similarity between the two sequences. The accuracy of the model was assessed by calculating the similarity between predicted and actual sequences using the Levenshtein distance. The average similarity across all sequences in the testing set was computed to gauge the overall performance of the HMM.
+In the figure below, we observe an amino acid sequence where each observed state corresponds to an amino acid emitted by one of three hidden states. These hidden states represent different structural components of the amino acid sequence.
+</p>
+
+<p style='text-align: justify;'> 
+In essence, the hidden states reveal the underlying structure and dynamics, illustrating the core principle of Hidden Markov Models in capturing intricate patterns within sequential data.
+</p>
+
+## Deep Learning Model
+
+<p style='text-align: justify;'> 
+The main motivation of using deep learning in this problem was to treat the task of secondary structure sequence prediction from amino acid sequences as a sequence-to-sequence translation task.
+</p>
+
+### Data Pre-processing
+
+<p style='text-align: justify;'> 
+The initial phase involved the conversion of amino acid labels and secondary structure labels into integer representations. This crucial preprocessing step transformed the input amino acid sequences and the corresponding expected output of secondary structure sequences into sequences of integers, facilitating their compatibility with the subsequent stages of the model.
+</p>
+
+<p style='text-align: justify;'> 
+Following the conversion to integer representations, the dataset underwent further organization by being partitioned into batches, each containing 64 instances. To ensure uniformity and streamline the training process, sequences within each batch were padded with zeros, harmonizing their lengths. This step of zero-padding aimed to create homogeneous sequences within a batch, enabling efficient parallelization and computation during the training phase.
+</p>
+
+### Model Architecture
+
+<p style='text-align: justify;'> 
+The first layer in our model was an embedding layer to represent amino acids as continuous vectors. This embedding process transforms the categorical nature of amino acids into continuous represen- tations, allowing the subsequent layers of the neural network to operate on a more meaningful and continuous input space.
+</p>
+
+<p style='text-align: justify;'> 
+The output of the embedding layer was passed into an bi-directional LSTM layer. LSTM, which stands for Long Short-Term Memory, is a type of recurrent neural network (RNN) architecture. The LSTM architecture consists of: Memory Cell, Forget Gate, Inpute Gate and Output Gate. By incorporating these components, LSTMs are capable of learning and remembering patterns in sequences over extended periods. The gating mechanisms enable them to selectively update and utilize information, making them well-suited for tasks where understanding and retaining long-term dependencies are crucial.
+</p>
+
+<p style='text-align: justify;'> 
+A key element of our model architecture involved the incorporation of a bidirectional LSTM layer. A bi-directional LSTM consists of two LSTMs: one for the forward direction, and one for the backward direction. The choice of a bidirectional LSTM is particularly significant as it enables the model to capture sequential dependencies in both forward and backward directions. This bidirectional nature enhances the model’s ability to comprehend the contextual information surrounding each amino acid in the sequence, thereby improving the overall representation learning.
+</p>
+
+<p style='text-align: justify;'> 
+For the specific task of classifying secondary structures, a multi-class classification framework was adopted. This implies that the model aimed to categorize each amino acid into one of the predefined secondary structure classes, such as helix, strand, or coil. To train the model, we employed the categorical cross-entropy loss function. Categorical cross-entropy is well-suited for multi-class classification problems, as it measures the dissimilarity between the predicted probability distribution and the true distribution of class labels.
+</p>
+
+<p style='text-align: justify;'> 
+The optimization of model parameters during training was facilitated by the Adam optimizer. Adam (short for Adaptive Moment Estimation) is an optimization algorithm that combines the advantages of both momentum-based optimization and root mean square propagation. It adapts the learning rates for each parameter individually, offering a dynamic and efficient approach to gradient descent. This adaptability helps the model converge faster and more reliably, especially in scenarios involving high-dimensional and intricate data such as amino acid sequences.
+</p>
+
+## Evaluation
+
+<p style='text-align: justify;'> 
+In order to compare and evaluate the performance of the three approaches on any given amino acid sequence, we computed the similarity score as follows:
+</p>
+
+<p style='text-align: justify;'> 
+Similarity Score = [1 − (Levenshtein Distance/Sequence Length)] ∗ 100 
+</p>
+
+<p style='text-align: justify;'> 
+Here, Levenshtein distance, also known as edit distance, is a measure of the similarity between two strings. It quantifies the minimum number of single-character edits (insertions, deletions, or substitutions) required to transform one string into another.
+</p>
+
+<p style='text-align: justify;'> 
+Furthermore, he accuracy of each method was computed by taking the average over the similarity scores over all the sequences in the test set.
+</p>
+
+# <span style="color:#007ea7"> Results
+
+<p style='text-align: justify;'> 
+Upon closely observing the model performance on a few select strings (Figure 6), it is clear that all three models have a decent performance in predicting alpha helices and random coils, compared to the prediction of beta sheets. The observed inefficiency in predicting beta structures is likely influenced by the scarcity of training instances representing beta structures and the inherent challenge of capturing long-range dependencies crucial for accurate predictions.
+</p>
+
+<p style='text-align: justify;'> 
+From the accuracy plot (Figure 7), the kNN method exhibited surprisingly high performance, demon- strating notable effectiveness in discerning the protein’s secondary structure based on its neighbors in the dataset. However, the simplicity of the LSTM model stood out as it claimed the top position, showcasing the best performance among the three methods. The LSTM’s capacity to capture sequen- tial dependencies in the amino acid sequences proved highly effective in the context of secondary structure prediction.
+</p>
+
+<p style='text-align: justify;'> 
+On the contrary, the Hidden Markov Model (HMM) exhibited relatively low performance. HMM, relying on a probabilistic framework, faced challenges in capturing intricate patterns within the protein sequences, resulting in less accurate predictions compared to the other methods.
+</p>
+
+# <span style="color:#007ea7"> Conclusion
+
+<p style='text-align: justify;'> 
+The Long Short-Term Memory (LSTM) model has become a standout choice in protein secondary structure prediction due to its exceptional ability to capture long-range dependencies, understand hierarchical representations, and effectively handle sequential context. LSTMs exhibit superior adaptability during training, enabling them to comprehend the diverse intricacies of protein structures and provide a nuanced understanding of folding patterns.
+</p>
+
+<p style='text-align: justify;'> 
+While Hidden Markov Models (HMMs) offer interpretability and proficiency in modeling local dependencies, they face limitations in addressing long-range interactions crucial for accurate structure prediction. On the other hand, the k-Nearest Neighbors (kNN) method, with its simplicity and intuitive approach to local sequence similarity, falls short due to sensitivity to noise and an inadequate capacity to model intricate long-range dependencies inherent in protein folding.
+</p>
+
+<p style='text-align: justify;'> 
+In summary, the LSTM’s advanced features in handling these critical aspects make it the preferred choice for protein secondary structure prediction when compared to HMMs and kNN.
 </p>
