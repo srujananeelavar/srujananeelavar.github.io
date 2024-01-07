@@ -1,6 +1,6 @@
 ---
 title: "Optimizing VEGFR2 Inhibitor Discovery: <em>Leveraging Molecular Descriptors for Streamlined Drug Development</em>"
-excerpt: The research focuses on Vascular Endothelial Growth Factor Receptor 2 (VEGFR2), a pivotal receptor in angiogenesis, with implications in diseases like cancer and macular degeneration. Current FDA-approved drugs face limitations, prompting the exploration of new VEGFR2 inhibitors using the Quantitative Structure-Activity Relationship (QSAR) method. Building upon these findings, the proposed project aims to identify molecular descriptors that aid in the discovery of novel, effective VEGFR2 inhibitors, ultimately constructing a QSAR model for predicting inhibition activity.
+excerpt: The proposed project aims to identify molecular descriptors that aid in the discovery of novel, effective VEGFR2 inhibitors, ultimately constructing a QSAR model for predicting inhibition activity.
 collection: Projects
 ---
 
