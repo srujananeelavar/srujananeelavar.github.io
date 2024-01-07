@@ -6,6 +6,8 @@ collection: Projects
 
 <span style="color:gray"> _Computational Medicine (02718) Course Project_
 
+_This [Google Colab notebook] (https://colab.research.google.com/drive/1SXprNKoZVDaa273QBNnEJYICoj1Gw05d?usp=sharing) contains the code pertaining to this project._
+
 # <span style="color:#007ea7"> Introduction
 
 <p style='text-align: justify;'> 
