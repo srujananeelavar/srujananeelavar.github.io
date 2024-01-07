@@ -4,7 +4,7 @@ excerpt: The research focuses on Vascular Endothelial Growth Factor Receptor 2 (
 collection: Projects
 ---
 
-# <span style="color:#003546"> Introduction
+# <span style="color:#007ea7"> Introduction
 
 Vascular Endothelial Growth Factor Receptor 2 (VEGFR2) emerges as a pivotal receptor in angiogenesis, the process of forming new blood vessels. This mechanism holds significance in various diseases such as cancer, age-related macular degeneration, and inflammatory conditions like rheumatoid arthritis. In the context of cancer and macular degeneration, the overproduction of angiogenic factors, notably VEGF, hyperstimulates VEGFR2, leading to excessive angiogenesis. Addressing this, the use of VEGFR2 inhibitors becomes imperative to curtail nutrient supply to cancerous cells, thereby offering potential therapeutic avenues for these conditions.
 
