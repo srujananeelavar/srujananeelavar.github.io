@@ -4,7 +4,7 @@ excerpt: The research focuses on Vascular Endothelial Growth Factor Receptor 2 (
 collection: Projects
 ---
 
-<span style="color:gray"> _Computational Medicine (02718) Course Project _
+<span style="color:gray"> _Computational Medicine (02718) Course Project_
 
 # <span style="color:#007ea7"> Introduction
 
