@@ -4,11 +4,11 @@ excerpt: The research focuses on Vascular Endothelial Growth Factor Receptor 2 (
 collection: Projects
 ---
 
-# Introduction
+# <span style="color:blue"> Introduction <\span>
 
 Vascular Endothelial Growth Factor Receptor 2 (VEGFR2) emerges as a pivotal receptor in angiogenesis, the process of forming new blood vessels. This mechanism holds significance in various diseases such as cancer, age-related macular degeneration, and inflammatory conditions like rheumatoid arthritis. In the context of cancer and macular degeneration, the overproduction of angiogenic factors, notably VEGF, hyperstimulates VEGFR2, leading to excessive angiogenesis. Addressing this, the use of VEGFR2 inhibitors becomes imperative to curtail nutrient supply to cancerous cells, thereby offering potential therapeutic avenues for these conditions.
 
-Although FDA-approved drugs like sorafenib and pazopanib target VEGFR2, their efficacy is hindered by side effects and resistance issues [2]. To enhance treatment outcomes, the exploration of new drugs becomes paramount. While this quest poses challenges, the Quantitative Structure-Activity Relationship (QSAR) method offers a strategic link between molecular structures and effects, enabling the <em>in silico</em> screening of potential bioactive compounds. This approach minimizes the need for costly experiments in drug discovery.
+Although FDA-approved drugs like sorafenib and pazopanib target VEGFR2, their efficacy is hindered by side effects and resistance issues. To enhance treatment outcomes, the exploration of new drugs becomes paramount. While this quest poses challenges, the Quantitative Structure-Activity Relationship (QSAR) method offers a strategic link between molecular structures and effects, enabling the <em>in silico</em> screening of potential bioactive compounds. This approach minimizes the need for costly experiments in drug discovery.
 
 Previous research successfully identified potential inhibitory molecules through QSAR models. Aligning with these achievements, our proposal takes a step further by concentrating on the identification of key molecular descriptors crucial for recognizing effective VEGFR2 inhibitors. The approach aims to deepen the understanding of specific features essential for inhibitory efficacy.
 
@@ -19,7 +19,9 @@ The primary objective of our project is to construct a QSAR model for predicting
 ![Figure 1: Data Acquisition and Preprocessing Workflow](/images/dataSection.jpg)
 
 We employed the ChEMBL database for its comprehensive collection of compounds inhibiting VEGFR2. ChEMBL, being a robust bioactivity database, provides valuable information on molecular targets, including VEGFR2, making it a suitable resource for our investigation. Our specific query string was "VEGFR2," and we identified the Target ID as CHEMBL279 [5].
+
 Our primary objective was to focus on compounds with reported IC50 bioactivity values for inhibiting VEGFR2. The IC50 serves as a metric for a compound’s potency, indicating the concentration at which the compound inhibits the angiogenesis process by 50%. A lower IC50 signifies higher potency. Our resulting dataset encompasses 14,087 compounds recognized for their VEGFR2 inhibitory properties, featuring 46 relevant attributes (14,087 rows x 46 columns).
+
 Subsequently, to enhance data quality, we eliminated the rows with missing values. The dataset was then categorized into active, intermediate, and inactive groups based on standard IC50 values.
 Recognizing the exponential scale of IC50 values, we converted them to pIC50, representing the nega- tive logarithm of IC50. This transformation facilitates more accessible comparison and interpretation of compound potency, leading to the addition of a pIC50 column in our dataframe. Consequently, our final dataframe after data preprocessing comprises 13,699 compounds x 5 features.
 
