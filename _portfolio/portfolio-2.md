@@ -35,7 +35,7 @@ In this project, we aim to delve into the practical aspects of predicting protei
 
 # <span style="color:#007ea7"> Methods
 
-## Data
+## <span style="color:#ADD8E6"> Data
 
 <p style='text-align: justify;'> 
 The dataset was obtained from RCSB PDB, which comprises 477,000 samples, each featuring an amino acid sequence alongside its corresponding secondary structure sequence. To streamline the analysis, we transformed the original eight-category secondary structure labels (’sst’) into a simplified three-category system. This transformation involved grouping ’B’ into ’E’ and combining ’G’ and ’I’ into ’H,’ yielding three distinct categories: ’C’ (Coil), ’H’ (Helix), and ’E’ (Beta).
@@ -50,7 +50,7 @@ Subsequently, to ensure data integrity, we systematically removed samples with d
 ### Data Pre-processing
 
 <p style='text-align: justify;'> 
-Amino acid sequences were transformed into numerical representations using a one-hot encoding scheme. Each character in the sequences was mapped to a numerical value, calculated as the alphabetical position of the character (e.g., A=1, B=2, ..., Z=25). The transformed structural labels were encoded numerically to facilitate compatibility with machine learning models. The encoding scheme assigned ’C’ to 3, ’H’ to 2, and ’E’ to 1, converting the structural information into a format suitable for classification algorithms
+Amino acid sequences were transformed into numerical representations using a one-hot encoding scheme. Each character in the sequences was mapped to a numerical value, calculated as the alphabetical position of the character (e.g., A=1, B=2, ..., Z=25). The transformed structural labels were encoded numerically to facilitate compatibility with machine learning models. The encoding scheme assigned ’C’ to 3, ’H’ to 2, and ’E’ to 1, converting the structural information into a format suitable for classification algorithms.
 </p>
 
 <p style='text-align: justify;'> 
