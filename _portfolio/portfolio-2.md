@@ -35,11 +35,11 @@ In this project, we aim to delve into the practical aspects of predicting protei
 
 # <span style="color:#007ea7"> Methods
 
-[Figure 1: kNN Classification](/images/kNNImage.png)
+![Figure 2: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis](/images/methodfinal.jpg)
 
-_**Figure 1**: kNN Classification_
+_**Figure 2**: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis_
 
-## Data
+## Exploratory Data Analysis
 
 <p style='text-align: justify;'> 
 The dataset was obtained from RCSB PDB, which comprises 477,000 samples, each featuring an amino acid sequence alongside its corresponding secondary structure sequence. To streamline the analysis, we transformed the original eight-category secondary structure labels (’sst’) into a simplified three-category system. This transformation involved grouping ’B’ into ’E’ and combining ’G’ and ’I’ into ’H,’ yielding three distinct categories: ’C’ (Coil), ’H’ (Helix), and ’E’ (Beta).
