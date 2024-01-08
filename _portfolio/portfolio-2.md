@@ -17,10 +17,15 @@ Predicting the secondary structure of proteins is a fundamental endeavor in the 
 <p style='text-align: justify;'> 
 Before diving into different secondary structure prediction approaches, it is important to understand the biological significance and details about secondary structures of proteins. We examine only three main secondary structure classes here, namely the alpha helix (H), beta sheet (E) and random coil (C).
 
+<p style='text-align: justify;'> 
 1. Alpha helices are essential for maintaining the structural integrity and stability of a protein. They also play a crucial role in protein-protein interactions and are involved in DNA binding and recognition. An alpha helix is a right-handed coil in which the backbone of the protein forms a spiral, with hydrogen bonds stabilizing the structure. Each turn of the helix typically consists of 3.6 amino acid residues.
+</p>
 
+<p style='text-align: justify;'> 
 2. Beta sheets are crucial for protein-protein interactions, as well as for providing structural strength to proteins. They are involved in forming the beta-barrel structure in membrane proteins. Beta sheets are formed when neighboring segments of the protein’s polypeptide chain run alongside each other and are held together by hydrogen bonds.
+</p>
 
+<p style='text-align: justify;'> 
 3. Random coils, or unstructured regions, represent the flexible and less ordered portions of a protein. They often act as flexible linkers between the other secondary structure elements. Random coils lack a regular repeating structure. They are characterized by a lack of stable hydrogen bonding patterns, which gives them their flexible and disordered nature.
 </p>
 
@@ -30,9 +35,9 @@ In this project, we aim to delve into the practical aspects of predicting protei
 
 # <span style="color:#007ea7"> Methods
 
-![Figure 2: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis](/images/methodfinal.jpg)
+![Figure 1: kNN Classification](/images/kNNImage.png)
 
-_**Figure 2**: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis_
+_**Figure 1**: kNN Classification_
 
 ## Data
 
@@ -102,6 +107,9 @@ The generality of the HMM framework lies in its flexibility to model diverse sys
 In the figure below, the aij probabilities are the transition probabilities. The bij probabilities are the emission probabilities.
 </p>
 
+![Figure 2: General Topology of HMM](/images/hmm1.png)
+_**Figure 1**: General Topology of HMM_
+
 ### Protein Secondary Structure Prediction HMM Model
 
 <p style='text-align: justify;'> 
@@ -126,6 +134,9 @@ In the figure below, we observe an amino acid sequence where each observed state
 In essence, the hidden states reveal the underlying structure and dynamics, illustrating the core principle of Hidden Markov Models in capturing intricate patterns within sequential data.
 </p>
 
+![Figure 3:  Hidden Markov Models Unveil Amino Acid Structure](/images/hmm2.png)
+_**Figure 3**: Hidden Markov Models Unveil Amino Acid Structure_
+
 ## Deep Learning Model
 
 <p style='text-align: justify;'> 
@@ -144,9 +155,15 @@ Following the conversion to integer representations, the dataset underwent furth
 
 ### Model Architecture
 
+![Figure 4:  Model Architecture](/images/lstmmodelarchitecture.png)
+_**Figure 4**: Model Architecture_
+
 <p style='text-align: justify;'> 
 The first layer in our model was an embedding layer to represent amino acids as continuous vectors. This embedding process transforms the categorical nature of amino acids into continuous represen- tations, allowing the subsequent layers of the neural network to operate on a more meaningful and continuous input space.
 </p>
+
+![Figure 5:  LSTM Architecture](/images/LSTM.png)
+_**Figure 5**: LSTM Architecture_
 
 <p style='text-align: justify;'> 
 The output of the embedding layer was passed into an bi-directional LSTM layer. LSTM, which stands for Long Short-Term Memory, is a type of recurrent neural network (RNN) architecture. The LSTM architecture consists of: Memory Cell, Forget Gate, Inpute Gate and Output Gate. By incorporating these components, LSTMs are capable of learning and remembering patterns in sequences over extended periods. The gating mechanisms enable them to selectively update and utilize information, making them well-suited for tasks where understanding and retaining long-term dependencies are crucial.
@@ -179,14 +196,20 @@ Here, Levenshtein distance, also known as edit distance, is a measure of the sim
 </p>
 
 <p style='text-align: justify;'> 
-Furthermore, he accuracy of each method was computed by taking the average over the similarity scores over all the sequences in the test set.
+Furthermore, the accuracy of each method was computed by taking the average over the similarity scores over all the sequences in the test set.
 </p>
 
 # <span style="color:#007ea7"> Results
 
+![Figure 6:  Similarity Scores of Selected Strings](/images/simscore.jpg)
+_**Figure 6**: Similarity Scores of Selected Strings_
+
 <p style='text-align: justify;'> 
 Upon closely observing the model performance on a few select strings (Figure 6), it is clear that all three models have a decent performance in predicting alpha helices and random coils, compared to the prediction of beta sheets. The observed inefficiency in predicting beta structures is likely influenced by the scarcity of training instances representing beta structures and the inherent challenge of capturing long-range dependencies crucial for accurate predictions.
 </p>
+
+![Figure 7:  Model-wise Accuracy (%)](/images/accuracy.jpg)
+_**Figure 7**: Model-wise Accuracy (%)_
 
 <p style='text-align: justify;'> 
 From the accuracy plot (Figure 7), the kNN method exhibited surprisingly high performance, demon- strating notable effectiveness in discerning the protein’s secondary structure based on its neighbors in the dataset. However, the simplicity of the LSTM model stood out as it claimed the top position, showcasing the best performance among the three methods. The LSTM’s capacity to capture sequen- tial dependencies in the amino acid sequences proved highly effective in the context of secondary structure prediction.
