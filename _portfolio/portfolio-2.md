@@ -49,10 +49,6 @@ Subsequently, to ensure data integrity, we systematically removed samples with d
 
 ### Data Pre-processing
 
-![Figure 1: kNN Classification](/images/kNNImage.png)
-
-_**Figure 1**: kNN Classification_
-
 <p style='text-align: justify;'> 
 Amino acid sequences were transformed into numerical representations using a one-hot encoding scheme. Each character in the sequences was mapped to a numerical value, calculated as the alphabetical position of the character (e.g., A=1, B=2, ..., Z=25). The transformed structural labels were encoded numerically to facilitate compatibility with machine learning models. The encoding scheme assigned ’C’ to 3, ’H’ to 2, and ’E’ to 1, converting the structural information into a format suitable for classification algorithms.
 </p>
@@ -66,6 +62,10 @@ The dataset was divided into training and testing sets using an 80:20 ratio. Thi
 </p>
 
 ### Model Training and Fitting
+
+![Figure 1: kNN Classification](/images/kNNImage.png)
+
+_**Figure 1**: kNN Classification_
 
 <p style='text-align: justify;'> 
 kNN, or k-Nearest Neighbors, stands as a noteworthy supervised learning algorithm falling within the realm of instance-based, lazy learning methods. As a non-parametric approach, it refrains from making explicit assumptions about the functional form characterizing the underlying data distribution. The central concept driving kNN involves classifying a data point by leveraging the majority class within its k nearest neighbors within the feature space. These "nearest neighbors" encompass data points sharing similar features or attributes.
