@@ -36,6 +36,7 @@ In this project, we aim to delve into the practical aspects of predicting protei
 # <span style="color:#007ea7"> Methods
 
 ![Figure 1: kNN Classification](/images/kNNImage.png)
+
 _**Figure 1**: kNN Classification_
 
 ## Data
