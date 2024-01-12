@@ -33,9 +33,7 @@ Before diving into different secondary structure prediction approaches, it is im
 In this project, we aim to delve into the practical aspects of predicting protein secondary structures, focusing on the significance of alpha helices, beta sheets, and random coils. By exploring predictive methods and their biological implications, the objective is to improve our understanding of protein behavior for practical applications in drug discovery, functional annotation, and related fields.
 </p>
 
-# Methods
-
-## Data
+# <span style="color:#007ea7"> Methods
 
 <p style='text-align: justify;'> 
 The dataset was obtained from RCSB PDB, which comprises 477,000 samples, each featuring an amino acid sequence alongside its corresponding secondary structure sequence. To streamline the analysis, we transformed the original eight-category secondary structure labels (’sst’) into a simplified three-category system. This transformation involved grouping ’B’ into ’E’ and combining ’G’ and ’I’ into ’H,’ yielding three distinct categories: ’C’ (Coil), ’H’ (Helix), and ’E’ (Beta).
