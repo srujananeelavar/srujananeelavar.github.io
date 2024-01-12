@@ -53,7 +53,7 @@ redirect_from:
 # Skills
 
 - **Programming Languages and Cloud**: Python (NumPy, Pandas, Scikit-learn, PyTorch), Biopython, R, Go, UNIX/LINUX Shell Script, HTML, Markdown, Google Cloud Platform - Compute Engine, Github, PSC Bridges Supercomputing System
-- **Machine Learning**: Random Forest, Decision Tree, Support Vector Machines, k-NN, k-means and Heirarchical Clustering, AdaBoost, Gradient Boosting, HMM, GMM, CNN, Principal Component Analysis,Filter-based and Embedded Feature Selection Techniques
+- **Machine Learning**: Random Forest, Decision Tree, Support Vector Machines, k-NN, k-means and Hierarchical Clustering, AdaBoost, Gradient Boosting, HMM, GMM, CNN, Principal Component Analysis,Filter-based and Embedded Feature Selection Techniques
 - **Bioinformatics Tools**: BLAST, MEGA X, ClustalW, AutoDockTools, GROMACS, AUGUSTUS, samtools, bamtools, PyDESeq2, rdkit
 
 # Publications
