@@ -187,7 +187,7 @@ For the specific task of classifying secondary structures, a multi-class classif
 The optimization of model parameters during training was facilitated by the Adam optimizer. Adam (short for Adaptive Moment Estimation) is an optimization algorithm that combines the advantages of both momentum-based optimization and root mean square propagation. It adapts the learning rates for each parameter individually, offering a dynamic and efficient approach to gradient descent. This adaptability helps the model converge faster and more reliably, especially in scenarios involving high-dimensional and intricate data such as amino acid sequences.
 </p>
 
-## Evaluation
+## <span style="color:#007ea7"> Evaluation
 
 <p style='text-align: justify;'> 
 In order to compare and evaluate the performance of the three approaches on any given amino acid sequence, we computed the similarity score as follows:
