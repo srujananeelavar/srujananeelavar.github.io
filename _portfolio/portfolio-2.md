@@ -35,6 +35,10 @@ In this project, we aim to delve into the practical aspects of predicting protei
 
 # <span style="color:#007ea7"> Methods
 
+![Figure 3: op 20 Important Features from XGBRegressor](/images/top20.png)
+
+_**Figure 3**: op 20 Important Features from XGBRegressor_
+
 ## Data
 
 <p style='text-align: justify;'> 
