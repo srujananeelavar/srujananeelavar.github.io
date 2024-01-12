@@ -4,7 +4,8 @@ excerpt: The project aims to predict the protein secondary structure using machi
 collection: Projects
 ---
 
-<span style="color:gray"> _Computational Methods for Biological Modeling and Simulation (02712) Course Project (Nov 2023)_
+<span style="color:gray"> _Computational Methods for Biological Modeling and Simulation (02712) Course Project_
+<span style="color:gray"> _(Nov 2023)_
 
 _This [Google Drive Link](https://drive.google.com/drive/folders/1UfIrLgRXrXgJZXj9r6R8haiCdiqjVHMv?usp=share_link) contains the data and code pertaining to this project._
 
