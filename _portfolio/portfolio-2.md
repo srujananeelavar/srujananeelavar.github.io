@@ -33,7 +33,7 @@ Before diving into different secondary structure prediction approaches, it is im
 In this project, we aim to delve into the practical aspects of predicting protein secondary structures, focusing on the significance of alpha helices, beta sheets, and random coils. By exploring predictive methods and their biological implications, the objective is to improve our understanding of protein behavior for practical applications in drug discovery, functional annotation, and related fields.
 </p>
 
-# <span style="color:#007ea7"> Methods
+# Methods
 
 ## Data
 
