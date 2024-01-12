@@ -1,7 +1,7 @@
 ---
 title: "Optimizing VEGFR2 Inhibitor Discovery: <em>Leveraging Molecular Descriptors for Streamlined Drug Development</em>"
-excerpt: The proposed project aims to identify molecular descriptors that aid in the discovery of novel, effective VEGFR2 inhibitors, ultimately constructing a QSAR model for predicting inhibition activity.
-<img src="/images/dataSection.jpg" width="200" height="100">
+excerpt: "The proposed project aims to identify molecular descriptors that aid in the discovery of novel, effective VEGFR2 inhibitors, ultimately constructing a QSAR model for predicting inhibition activity.
+<img src="/images/dataSection.jpg" width="200" height="100">"
 collection: Projects
 ---
 
