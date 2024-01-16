@@ -73,27 +73,42 @@ The ratio of true positive predictions to all actual positive instances (Recall 
 ### F1-Score
 
 <p style='text-align: justify;'>
-The harmonic mean of precision and recall, offering a balanced measure of model performance (F1-score = 2 _ Precision _ Recall / (Precision + Recall))
+The harmonic mean of precision and recall, offering a balanced measure of model performance (F1-score = 2 * Precision * Recall / (Precision + Recall))
 </p>
 
 # Results
 
-![Figure 3: op 20 Important Features from XGBRegressor](/images/top20.png)
+We applied our models to both the imbalanced dataset and the oversampled dataset to compare their performance. This allows us to understand the significance and limitations of oversampling.
 
-_**Figure 3**: op 20 Important Features from XGBRegressor_
+## k-Nearest Neighbor
 
-<p style='text-align: justify;'> 
-In our pursuit to pinpoint the crucial molecular descriptors influencing VEGFR2 inhibitors, we leveraged the feature*importances* attribute within the XGBoostRegressor Model. Our focus was on extracting the top 20 molecular descriptors and delineating their significance in predicting pIC50 values. To enhance interpretability, we crafted a visually informative bar plot encapsulating the importance of each feature (Figure 3).
-</p>
+### Before Oversampling
 
 <p style='text-align: justify;'> 
-Subsequently, we explored the correlation between the presence ("1") of specific PaDeL descriptors (representing chemical substructures) and inhibitor activity. We exclusively focused on inhibitors categorized as "active" in the bioactivity class, filtering this subset for the presence ("1") of individual PaDeL descriptors. This process was iteratively applied to all PaDeL descriptors under consideration.
-To convey our findings effectively, we visualized the correlation outcomes through a comprehensive bar plot, shedding light on the interplay between the presence of each PaDeL descriptor and the bioactivity class "active". In parallel, we consulted the document to glean deeper insights into the nuanced meanings behind the identified top 20 molecular descriptors.
+The accuracy of k-Nearest Neighbor before applying SMOTE on our training dataset was 80.0%. Table 1 (see below) presents the classification report. Accuracy scores fluctuate with increasing k values (Table 2).
 </p>
 
+![Figure 2: Confusion matrix for k-NN without SMOTE](/images/kNNwithoutSOTE.png)
+
+_**Figure 1**: Confusion matrix for k-NN without SMOTE_
+
+![Table 2: Table of Different k Values with Corresponding Accuracy Score](/images/kNNAcc.png)
+
+_**Table 2**: Table of Different k Values with Corresponding Accuracy Score_
+
+### After Oversampling
+
 <p style='text-align: justify;'> 
-This holistic methodology not only strengthens the robustness of our analysis but also ensures clarity in presenting the pivotal role played by these molecular descriptors in predicting VEGFR2 inhibitor activity.
+Post-SMOTE, our k-Nearest Neighbor model's accuracy on the training dataset decreased to 61.8%. This drop is attributed to overfitting before SMOTE, which favored the majority class. The accuracy scores drop gradually with increasing k values (Table 4).
 </p>
+
+![Figure 3: Confusion matrix for k-NN with SMOTE](/images/kNNSmote.png)
+
+_**Figure 3**: Confusion matrix for k-NN with SMOTE_
+
+![Table 4: Table of Different k Values with Corresponding Accuracy Score (SMOTE)](/images/kNNAccSmote.png)
+
+_**Table 4**: Table of Different k Values with Corresponding Accuracy Score (SMOTE)_
 
 # <span style="color:#007ea7"> Results
 
