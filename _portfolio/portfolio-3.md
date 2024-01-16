@@ -25,7 +25,7 @@ This study employs machine learning models (Random Forest, Multiclass Logistic R
 _**Figure 1**: Attaining Class Balance using SMOTE_
 
 <p style='text-align: justify;'> 
-The dataset, sourced from Kaggle [link], comprises 253,680 survey responses to CDC’s BRFSS2015, featuring 21 variables like high blood pressure, BMI, etc. The target variable, Diabetes012, has three classes (0 for no diabetes, 1 for prediabetes, and 2 for diabetes) with class imbalance. Due to computational constraints, 14,000 samples were used, split 75:25 for training and testing. 
+The dataset, sourced from [Kaggle](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?resource=download), comprises 253,680 survey responses to CDC’s BRFSS2015, featuring 21 variables like high blood pressure, BMI, etc. The target variable, Diabetes012, has three classes (0 for no diabetes, 1 for prediabetes, and 2 for diabetes) with class imbalance. Due to computational constraints, 14,000 samples were used, split 75:25 for training and testing. 
 </p>
 
 <p style='text-align: justify;'> 
