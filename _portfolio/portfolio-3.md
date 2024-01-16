@@ -76,7 +76,7 @@ The ratio of true positive predictions to all actual positive instances (Recall 
 The harmonic mean of precision and recall, offering a balanced measure of model performance (F1-score = 2 * Precision * Recall / (Precision + Recall))
 </p>
 
-# Results
+# <span style="color:#007ea7"> Results
 
 We applied our models to both the imbalanced dataset and the oversampled dataset to compare their performance. This allows us to understand the significance and limitations of oversampling.
 
