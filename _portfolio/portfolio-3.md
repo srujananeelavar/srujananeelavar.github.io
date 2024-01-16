@@ -110,48 +110,20 @@ _**Figure 3**: Confusion matrix for k-NN with SMOTE_
 
 _**Table 4**: Table of Different k Values with Corresponding Accuracy Score (SMOTE)_
 
-# <span style="color:#007ea7"> Results
-
-## Exploratory Data Analysis
-
-![Figure 4: Mann-Whitney U Test Results](/images/exploratorymannu.jpg)
-
-_**Figure 4**: Mann-Whitney U Test Results_
+# <span style="color:#007ea7"> Conclusions
 
 <p style='text-align: justify;'> 
-The Mann-Whitney U Test results reveal significant differences between inhibitors belonging to the two bioactivity classes (active and inactive) (Figure 4). All five cases, including pIC50 values and four Lipinski descriptors (MW value, Log P value, NumDonors value, and NumAcceptors value), rejected the null hypothesis at the 0.05 significance level. Notably, the median values of Lipinski descriptors in our dataset adhere to Lipinski’s rule of five guidelines, reinforcing their compliance. Impressively, over 6000 inhibitors from our dataset are in accordance with Lipinski’s rule of five.
-</p>
-
-## Model Evaluation
-
-![Figure 5: Confusion Matrix](/images/confusionmatrix.png)
-
-_**Figure 5**: Confusion Matrix_
-
-<p style='text-align: justify;'> 
-We assessed the performance of our XGBoost Regressor using the coefficient of determination metric and achieved R2 = 0.513. This indicates that our descriptors can account for 51% of the variability in the dependent variable, namely the pIC50 values. To enhance interpretability, we reclassified the pIC50 values into three classes, leading to the computation of a confusion matrix and accuracy metrics. Impressively, we attained a commendable classification accuracy of 78%. Further analysis of the confusion matrix (Figure 5) highlights the model’s efficacy, particularly in accurately predicting pIC50 values for a substantial portion of active inhibitors (86% of true active inhibitors).
-</p>
-
-## Top Molecular Descriptors
-
-![Figure 6: Chemical Substructures and Inhibitor Activity; Table 1: Chemical substructures with highest correlation to inhibitor activity.](/images/figure5.png)
-
-_**Figure 6**: Chemical Substructures and Inhibitor Activity; **Table 1**: Chemical substructures with highest correlation to inhibitor activity._
-
-<p style='text-align: justify;'> 
-Figure 6 emphasizes key chemical substructures, identified from the top molecular descriptors by the XGBRegressor, exhibiting a strong correlation with inhibitor activity. The analysis presented in Figure 6 allows us to draw the inference that compounds harboring any of these highlighted substructures hold promise as potential VEGFR2 inhibitors. This insight provides a targeted and strategic approach for further exploration and validation in the pursuit of novel inhibitors with enhanced efficacy in inhibiting VEGFR2 activity.
-</p>
-
-# <span style="color:#007ea7"> Conclusion
-
-<p style='text-align: justify;'> 
-In summary, our exploration into the application of XGBRegressor for regression tasks yielded a modest performance, as evidenced by an R2 score of only 0.513. However, upon transforming the data to categorize compounds into three distinct activity classes based on pIC50 value thresholds, the model demonstrated commendable accuracy in classifying compounds as ’active,’ ’intermediate,’ and ’inactive.’ This shift in perspective allowed us to leverage the model effectively for classification tasks, highlighting its adaptability and revealing its strengths in different facets of the analysis.
+In conclusion, all our models are performing well, however they are struggling to identify certain classes, which is however seen to improve after performing oversampling using SMOTE. There is an increase in True Positives and False Positives for all models despite a decrease in True Negatives and False Negatives. 
 </p>
 
 <p style='text-align: justify;'> 
-A noteworthy observation stems from our successful identification of chemical substructures that play a pivotal role in discerning between active and inactive inhibitors of VEGFR2. This insight not only enhances our understanding of the underlying mechanisms but also provides valuable guidance for future research and drug discovery endeavors.
+From our results, we can conclude that Random Forest is able to distinguish between classes better than Multi class Logistic Regression and kNN models. This might be due to the fact that the test data set lack certain classes, i.e., the minority classes do not appear in the test set. 
 </p>
 
 <p style='text-align: justify;'> 
-Despite these achievements, certain lacunae include the presence of class imbalance within the dataset and the utilization of default hyperparameters. To address these challenges and further enhance model performance, future work should include implementing oversampling techniques to balance class representation and conducting hyperparameter tuning to optimize the model’s predictive capabilities.
+A point to note is that we did not perform oversampling on our test data set and hence it explains the reason why the minority classes are being poorly recognized in our confusion matrices. Further, the survey data may lack distinctive features for certain classes, i.e, there can be overlapping classes. Additional features for the minority class that is more distinctive may help in clearly distinguishing between the minority classes.
+</p>
+
+<p style='text-align: justify;'> 
+In the future, we could accommodate the usage of better computational resources so that we can run our models on our entire data set. This will help us understand if the limitation of our work is due to the lower number of samples. Further, we would like to tune the k-neighbors value for SMOTE in order to analyze how changing this hyper parameter changes the accuracy of our models. It would also be very beneficial to classify the different types of Diabetes by acquiring relevant data sets.
 </p>
