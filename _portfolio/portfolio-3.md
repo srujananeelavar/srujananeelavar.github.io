@@ -88,7 +88,7 @@ We applied our models to both the imbalanced dataset and the oversampled dataset
 The accuracy of k-Nearest Neighbor before applying SMOTE on our training dataset was 80.0%. Table 1 (see below) presents the classification report. Accuracy scores fluctuate with increasing k values (Table 2).
 </p>
 
-![Figure 2: Confusion matrix for k-NN without SMOTE](/images/kNNwithoutSOTE.png)
+![Figure 2: Confusion matrix for k-NN without SMOTE](/images/kNNwithoutSMOTE.png)
 
 _**Figure 1**: Confusion matrix for k-NN without SMOTE_
 
