@@ -1,94 +1,82 @@
 ---
 title: "Prediction of Diabetes based on Multiple Diagnostic and Lifestyle Features"
-excerpt: The proposed project aims to identify molecular descriptors that aid in the discovery of novel, effective VEGFR2 inhibitors, ultimately constructing a QSAR model for predicting inhibition activity.
+excerpt: The study aims to leverage machine learning models, including Random Forest, Multiclass Logistic Regression, and k-Nearest Neighbors, to predict diabetes from a dataset, emphasizing the importance of early detection to reduce complications and enhance the quality of life.
 collection: Projects
 ---
 
-<span style="color:gray"> _Computational Medicine (02718) Course Project (Nov 2023)_
+<span style="color:gray"> Machine Learning for Scientists (02620) Course Project (Apr 2023)\_
 
 _This [Google Colab notebook](https://colab.research.google.com/drive/1TEjunvA97hkH1N5KvBcnazY9O0U2EzNR) contains the code pertaining to this project._
 
 # <span style="color:#007ea7"> Introduction
 
 <p style='text-align: justify;'> 
-Vascular Endothelial Growth Factor Receptor 2 (VEGFR2) emerges as a pivotal receptor in angiogenesis, the process of forming new blood vessels. This mechanism holds significance in various diseases such as cancer, age-related macular degeneration, and inflammatory conditions like rheumatoid arthritis. In the context of cancer and macular degeneration, the overproduction of angiogenic factors, notably VEGF, hyperstimulates VEGFR2, leading to excessive angiogenesis. Addressing this, the use of VEGFR2 inhibitors becomes imperative to curtail nutrient supply to cancerous cells, thereby offering potential therapeutic avenues for these conditions.
+Diabetes, a chronic disorder marked by high blood sugar, impairs the regulation of glucose levels, impacting quality of life. The three types are Type I (autoimmune reaction hindering insulin production), Type II (imbalance causing insulin resistance), and Gestational (during pregnancy, affecting both mother and baby). Complications include blood vessel damage, nerve damage, and more. In 2019, diabetes caused 1.5 million deaths, and the projected cases by 2040 are 650 million. Early detection is crucial. 
 </p>
 
 <p style='text-align: justify;'> 
-Although FDA-approved drugs like sorafenib and pazopanib target VEGFR2, their efficacy is hindered by side effects and resistance issues. To enhance treatment outcomes, the exploration of new drugs becomes paramount. While this quest poses challenges, the Quantitative Structure-Activity Relationship (QSAR) method offers a strategic link between molecular structures and effects, enabling the <em>in silico</em> screening of potential bioactive compounds. This approach minimizes the need for costly experiments in drug discovery.
-</p>
-
-<p style='text-align: justify;'> 
-Previous research successfully identified potential inhibitory molecules through QSAR models. The primary objective of our project is to construct a QSAR model for predicting the inhibition activity of VEGFR2 inhibitors sourced from the ChEMBL database. The resulting QSAR model will hold the potential to assess the efficacy of novel compounds in VEGFR2 inhibition. This approach may have the potential to streamline the early phases of drug discovery for a spectrum of therapeutic applications, including anti-cancer, retinal diseases, and inflammatory diseases therapies.
+This study employs machine learning models (Random Forest, Multiclass Logistic Regression, k-Nearest Neighbors) on CDC’s BRFSS2015 dataset to predict diabetes, aiming to reduce complications and enhance quality of life.
 </p>
 
 # <span style="color:#007ea7"> Data
 
-![Figure 1: Data Acquisition and Preprocessing Workflow](/images/dataSection.jpg)
+![Figure 1: Attaining Class Balance using SMOTE](/images/Figure1MLProject.png)
 
-_**Figure 1**: Data Acquisition and Preprocessing Workflow_
+_**Figure 1**: Attaining Class Balance using SMOTE_
 
 <p style='text-align: justify;'> 
-We employed the ChEMBL database for its comprehensive collection of compounds inhibiting VEGFR2. ChEMBL, being a robust bioactivity database, provides valuable information on molecular targets, including VEGFR2, making it a suitable resource for our investigation. Our specific query string was "VEGFR2," and we identified the Target ID as CHEMBL279.
+The dataset, sourced from Kaggle [link], comprises 253,680 survey responses to CDC’s BRFSS2015, featuring 21 variables like high blood pressure, BMI, etc. The target variable, Diabetes012, has three classes (0 for no diabetes, 1 for prediabetes, and 2 for diabetes) with class imbalance. Due to computational constraints, 14,000 samples were used, split 75:25 for training and testing. 
 </p>
 
 <p style='text-align: justify;'> 
-Our primary objective was to focus on compounds with reported IC50 bioactivity values for inhibiting VEGFR2. The IC50 serves as a metric for a compound’s potency, indicating the concentration at which the compound inhibits the angiogenesis process by 50%. A lower IC50 signifies higher potency. Our resulting dataset encompasses 14,087 compounds recognized for their VEGFR2 inhibitory properties, featuring 46 relevant attributes (14,087 rows x 46 columns).
-</p>
-
-<p style='text-align: justify;'> 
-Subsequently, to enhance data quality, we eliminated the rows with missing values. The dataset was then categorized into active, intermediate, and inactive groups based on standard IC50 values. Recognizing the exponential scale of IC50 values, we converted them to pIC50, representing the nega- tive logarithm of IC50. This transformation facilitates more accessible comparison and interpretation of compound potency, leading to the addition of a pIC50 column in our dataframe. Consequently, our final dataframe after data preprocessing comprises 13,699 compounds x 5 features.
+Class imbalances were addressed using Synthetic Minority Oversampling Technique (SMOTE) on the training set, creating a balanced dataset. SMOTE aids in preventing overfitting and improving generalization. Post-SMOTE, the dataset is balanced (8610 samples per class). The project aims to compare model performance on original and oversampled data. Class imbalance is evident before SMOTE (left plot), while balance is achieved after SMOTE (right plot). [Figure 1a & 1b]
 </p>
 
 # <span style="color:#007ea7"> Methods
 
-![Figure 2: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis](/images/methodfinal.jpg)
-
-_**Figure 2**: A Detailed Workflow of Exploratory Data Analysis and QSAR Analysis_
-
-## Exploratory Data Analysis
+## k-Nearest Neighbor
 
 <p style='text-align: justify;'> 
-After completing the data preprocessing phase, we meticulously examined the data to evaluate its quality and determine the distinguishability between the active and inactive classes of inhibitors. Consequently, we excluded rows associated with the intermediate class, focusing solely on the active and inactive classes, resulting in a dataset of 11,592 compounds.
+Implemented from scratch, k-Nearest Neighbor is a non-parametric classification method that assigns labels based on majority votes. The algorithm calculates distances between the query and training set samples, assigns labels based on the k nearest distances, and determines the class by majority voting. This intuitive algorithm works well on both small and large datasets without requiring training.
 </p>
+
+## Multiclass Logistic Regression
 
 <p style='text-align: justify;'> 
-To derive Lipinski descriptors, we developed a custom function and utilized the Python package "rdkit" to generate four descriptors: molecular weight, the number of hydrogen bond acceptors and donors, and the octanol-water partition coefficient (logP). An orally active drug adheres to the Lipinski Rule of 5. As a result, our dataframe comprised 11,592 compounds with nine features, including the four Lipinski criteria.
-Subsequently, we conducted the Mann-Whitney U Test based on the different Lipinski criteria to assess the distinguishability between the two bioactivity classes (active and inactive) in our dataset (11,592 compounds × 9 features). The Mann-Whitney U test is a non-parametric statistical test used to determine whether there is a significant difference between two independent groups in terms of their distributions. It produces a p-value, which is then compared to a predetermined significance level α to make decisions about the null hypothesis.
+Implemented independently, Multiclass Logistic Regression predicts probabilities of a categorical variable with more than two categories. With 14,000 observations and 21 features across 3 classes, the algorithm finds the weight matrix W to predict class membership. The workflow involves calculating Z by multiplying X and W, applying the softmax function for probability distribution, and determining the class with the highest probability using argmax. The negative log-likelihood function is used for the loss function, updated iteratively until convergence.
 </p>
+
+## Random Forest
 
 <p style='text-align: justify;'> 
-The null hypothesis (H0) posits that there is no difference between the two groups (active and inactive bioactivity classes, in our case). If the p-value is less than or equal to the significance level, typically set at 0.05, the null hypothesis is rejected, suggesting a significant difference between the groups. Conversely, a p-value greater than the significance level leads to the acceptance of the null hypothesis, indicating no significant difference.
+Using scikit-learn, Random Forest is implemented with 300 decision trees. The algorithm builds an ensemble of decision trees on bootstrap samples and random feature subsets. To make predictions, it takes a majority vote of the decision trees. The criterion for measuring split quality is entropy.
 </p>
 
-## QSAR Analysis
+## Evaluation Metrics
 
 <p style='text-align: justify;'> 
-Following the insightful findings from our exploratory data analysis, we started with the Quantitative Structure-Activity Relationship (QSAR) analysis. Armed with a comprehensive dataframe containing 13,699 compounds, complete with essential features like chembl_id and canonical_smiles, the next step was creating PaDeL descriptors from the data.
+After fitting and predicting on our dataset, we assessed model performance using scikit-learn's accuracy score and classification report. The accuracy score calculates the proportion of correct predictions, while the classification report provides various metrics for model evaluation. Confusion matrices were constructed before and after SMOTE for a detailed analysis of oversampling impact on accuracy. Key metrics studied include:
 </p>
+
+### Precision
 
 <p style='text-align: justify;'> 
-PaDeL descriptors, serving as numerical representations of chemical compounds, offer a rich tapestry of structural and physicochemical properties vital for rigorous QSAR investigations. These descriptors serve as a fingerprint for each compound, capturing nuanced details that contribute to their biological activity.
-The meticulous application of PaDeL descriptors involves the assignment of binary values in a dedicated column. A value of 1 signifies the presence of the specific chemical substructure described by the PaDeL descriptor, while 0 denotes its absence. This meticulous approach allows us to translate complex chemical structures into a format conducive to quantitative analysis, laying the foundation for a comprehensive exploration of structure-activity relationships within our compound dataset.
+The ratio of true positive predictions to all positive predictions (Precision = True Positive / True Positive + False Positive).
 </p>
+
+### Recall
 
 <p style='text-align: justify;'> 
-The PaDeL descriptors, totaling 880 molecular descriptors, were generated using a shell script [7], predominantly representing the chemical substructures of the compounds. Employing the SMILES representation and ChEMBL ID of inhibitory compounds as inputs, we obtained a dataframe comprising 13,699 compounds and 880 molecular descriptors, serving as our independent variables for subsequent machine learning analysis. Additionally, dependent variable comprised the target variable, namely pIC50 values (13,699 compounds x 1 column).
+The ratio of true positive predictions to all actual positive instances (Recall = True Positive / True Positive + False Negative).
 </p>
 
-<p style='text-align: justify;'> 
-Subsequently, we divided our data into train and test sets through an 80-20 train-test split. Leveraging the XGBoost Regressor, a supervised machine learning algorithm renowned for its high performance in regression tasks, we aimed to predict pIC50 values based on the molecular descriptors generated through PaDeL. XGBRegressor, belonging to the gradient boosting family, employs a decision tree ensemble approach that learns sequentially and adaptively, correcting errors and optimizing a loss function. Its regularization terms control tree complexity, preventing overfitting by using shallow trees, while the "boosting" technique combines predictions of multiple weak learners for a robust model.
+### F1-Score
+
+<p style='text-align: justify;'>
+The harmonic mean of precision and recall, offering a balanced measure of model performance (F1-score = 2 _ Precision _ Recall / (Precision + Recall))
 </p>
 
-<p style='text-align: justify;'> 
-Post training our XGBoostRegressor model, we fitted it to the data and predicted the pIC50 values. To assess model performance, we employed the R2 (coefficient of determination), quantifying the proportion of variance in the dependent variable explained by the independent variables.
-</p>
-
-<p style='text-align: justify;'> 
-For a nuanced interpretation, we categorized true and predicted pIC50 values into three bioactivity classes—active, intermediate, and inactive—based on threshold values determined through Mann- Whitney U Test results. Values below 4 were deemed inactive, those above 6 as active, and those between 4 and 6 as intermediate. Subsequently, we evaluated classification accuracy using the accuracy_score function from sklearn and visualized the results through a confusion matrix, providing deeper insights into the classification outcomes.
-</p>
-
-## Identifying the Top 20 Molecular Descriptors
+# Results
 
 ![Figure 3: op 20 Important Features from XGBRegressor](/images/top20.png)
 
