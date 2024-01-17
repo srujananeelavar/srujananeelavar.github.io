@@ -5,4 +5,4 @@ title: "Pipeline to Annotate the Transcriptome of <em>Pongo pygmaeus</em>"
 collection: Projects
 ---
 
-# <span style="color:#007ea7"> Coming Up Soon!
+### Coming Up Soon!

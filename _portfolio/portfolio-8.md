@@ -5,4 +5,4 @@ title: "Description of Paenibacillus yunnanensis sp. nov., Isolated from a Tepid
 collection: Projects
 ---
 
-# <span style="color:#007ea7"> Coming Up Soon!
+### Coming Up Soon!

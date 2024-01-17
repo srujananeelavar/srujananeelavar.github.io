@@ -5,4 +5,4 @@ title: "SARS-CoV2 Genome Evolution: <em>Understanding and Accessing Unexplored R
 collection: Projects
 ---
 
-# <span style="color:#007ea7"> Coming Up Soon!
+### Coming Up Soon!
