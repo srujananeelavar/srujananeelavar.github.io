@@ -110,6 +110,66 @@ _**Figure 3**: Confusion matrix for k-NN with SMOTE_
 
 _**Table 4**: Table of Different k Values with Corresponding Accuracy Score (SMOTE)_
 
+## Multiclass Logistic Regression
+
+### Before Oversampling
+
+<p style='text-align: justify;'> 
+The accuracy of k-Nearest Neighbor before applying SMOTE on our training dataset was 80.0%. Table 1 (see below) presents the classification report. Accuracy scores fluctuate with increasing k values (Table 2).
+</p>
+
+![Figure 4: Confusion matrix for MLR without SMOTE](/images/kNNwithoutSMOTE.png)
+
+_**Figure 4**: Confusion matrix for k-NN without SMOTE_
+
+![Figure 5: Table of Different k Values with Corresponding Accuracy Score](/images/kNNAcc.png)
+
+_**Figure 5**: Table of Different k Values with Corresponding Accuracy Score_
+
+### After Oversampling
+
+<p style='text-align: justify;'> 
+Post-SMOTE, our k-Nearest Neighbor model's accuracy on the training dataset decreased to 61.8%. This drop is attributed to overfitting before SMOTE, which favored the majority class. The accuracy scores drop gradually with increasing k values (Table 4).
+</p>
+
+![Figure 6: Confusion matrix for MLR with SMOTE](/images/kNNSmote.png)
+
+_**Figure 6**: Confusion matrix for k-NN with SMOTE_
+
+![Figure 7: Table of Different k Values with Corresponding Accuracy Score (SMOTE)](/images/kNNAccSmote.png)
+
+_**Figure 7**: Table of Different k Values with Corresponding Accuracy Score (SMOTE)_
+
+## Random Forest
+
+### Before Oversampling
+
+<p style='text-align: justify;'> 
+The accuracy of k-Nearest Neighbor before applying SMOTE on our training dataset was 80.0%. Table 1 (see below) presents the classification report. Accuracy scores fluctuate with increasing k values (Table 2).
+</p>
+
+![Figure 2: Confusion matrix for k-NN without SMOTE](/images/kNNwithoutSMOTE.png)
+
+_**Figure 1**: Confusion matrix for k-NN without SMOTE_
+
+![Table 2: Table of Different k Values with Corresponding Accuracy Score](/images/kNNAcc.png)
+
+_**Table 2**: Table of Different k Values with Corresponding Accuracy Score_
+
+### After Oversampling
+
+<p style='text-align: justify;'> 
+Post-SMOTE, our k-Nearest Neighbor model's accuracy on the training dataset decreased to 61.8%. This drop is attributed to overfitting before SMOTE, which favored the majority class. The accuracy scores drop gradually with increasing k values (Table 4).
+</p>
+
+![Figure 3: Confusion matrix for k-NN with SMOTE](/images/kNNSmote.png)
+
+_**Figure 3**: Confusion matrix for k-NN with SMOTE_
+
+![Table 4: Table of Different k Values with Corresponding Accuracy Score (SMOTE)](/images/kNNAccSmote.png)
+
+_**Table 4**: Table of Different k Values with Corresponding Accuracy Score (SMOTE)_
+
 # <span style="color:#007ea7"> Conclusions
 
 <p style='text-align: justify;'> 
