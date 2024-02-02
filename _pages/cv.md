@@ -15,6 +15,8 @@ redirect_from:
 
   <span style="color:grey">**Relevant Coursework:** Programming for Scientists, Algorithms and Advanced Data Structures, Essential Mathematics and Statistics, Machine Learning, Computational Genomics, Advanced Microbiology, Modeling and Simulation, Advanced Quantitative Genetics, Bioinformatics Data Integration Practicuum, Computational Medicine, Automation of Scientific Research</span>
 
+  Major GPA: 3.73/4.33
+
 - **Bachelor of Engineering in Biotechnology**, Visvesvaraya Technological University, _Bangalore, India_ <span style="color:grey">— Aug 2021</span>
 
   <span style="color:grey">Major GPA: 9.40/10.00 Rank: 1/45 (Department Gold Medalist)
@@ -26,15 +28,18 @@ redirect_from:
 
   _Hiller Lab, Carnegie Mellon University_
 
-  - Conducted a comparative genomics analysis to assess the covariance between the regulator Rgg144 and its corresponding signal peptides, namely SHP144, rio120, rio121, and rio122 in _Streptococcus pneumoniae_.
-  - Designed and generated a network diagram to elucidate the specificity of interactions between the regulator and the signal peptides to understand cell-cell communication in pneumococcus.
+  - Developed a Python pipeline for analyzing genomic variations in Rgg-SHP144 system aiming to identify binding sites and regulon components in _Streptococcus pneumoniae_.
+  - Conducting empirical investigations to assess cross-communication dynamics between distinct allelic variants of Rgg-SHP144 within a reporter strain.
 
 - **Graduate Teaching Assistant**, _Pittsburgh, PA_ <span style="color:grey">— Aug 2023 – Dec 2023</span>
 
   _Carnegie Mellon University_
 
+  - Practical Computing for Biologists (03-708) & Professional Skills for Biotechnology, Quantitative & Computational Biology (03-604).
   - Contributed to the development of students' professional communication skills by focusing on elevator pitch refinement and interview techniques and offered guidance on effectively tailoring of communication to diverse audiences.
   - Conducted and evaluated mock interviews to simulate real-world scenarios, allowing students to practice articulating their professional skills and experiences.
+  - Organized office hours to address student queries on practical computing topics, including Bash, Python, and basic R.
+  - Evaluated and graded homework assignments, providing constructive feedback to enhance student comprehension and skill development in computing fundamentals.
 
 - **Bioscientific Content Developer**, _Remote_ <span style="color:grey">— Dec 2021 – May 2022</span>
 
@@ -52,9 +57,10 @@ redirect_from:
 
 # Skills
 
-- **Programming Languages and Cloud**: Python (NumPy, Pandas, Scikit-learn, PyTorch), Biopython, R, Go, UNIX/LINUX Shell Script, HTML, Markdown, Google Cloud Platform - Compute Engine, Github, PSC Bridges Supercomputing System
-- **Machine Learning**: Random Forest, Decision Tree, Support Vector Machines, k-NN, k-means and Hierarchical Clustering, AdaBoost, Gradient Boosting, HMM, GMM, CNN, Principal Component Analysis,Filter-based and Embedded Feature Selection Techniques
-- **Bioinformatics Tools**: BLAST, MEGA X, ClustalW, AutoDockTools, GROMACS, AUGUSTUS, samtools, bamtools, PyDESeq2, rdkit
+- **Programming Languages and Computing Infrastructure**: Python (NumPy, Pandas, sklearn), Biopython, R, LINUX, HTML, GitHub, PSC Bridges Supercomputing System, Google Cloud Platform
+- **Machine Learning**: Random Forest, Decision Tree, Support Vector Machines, k-NN, k-means and Hierarchical Clustering, Gradient Boosting, HMM, GMM, CNN, Principal Component Analysis, Filter-based and Embedded Feature Selection Techniques
+- **Bioinformatics Tools**: BLAST, MEGA11, ClustalW, AutoDockTools, GROMACS, AUGUSTUS, bedtools, bowtie2, bamtools, IGV, PyDESeq2, rdkit, Nextflow
+- **Biotechnology**: Isolation and quantification of DNA, RNA and proteins, ELISA, Molecular cloning
 
 # Publications
 
