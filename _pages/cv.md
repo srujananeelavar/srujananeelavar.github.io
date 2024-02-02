@@ -36,10 +36,9 @@ redirect_from:
   _Carnegie Mellon University_
 
   - Practical Computing for Biologists (03-708) & Professional Skills for Biotechnology, Quantitative & Computational Biology (03-604).
-  - Contributed to the development of students' professional communication skills by focusing on elevator pitch refinement and interview techniques and offered guidance on effectively tailoring of communication to diverse audiences.
-  - Conducted and evaluated mock interviews to simulate real-world scenarios, allowing students to practice articulating their professional skills and experiences.
   - Organized office hours to address student queries on practical computing topics, including Bash, Python, and basic R.
   - Evaluated and graded homework assignments, providing constructive feedback to enhance student comprehension and skill development in computing fundamentals.
+  - Conducted and evaluated mock interviews to allow students to develop professional communication skills by focusing on elevator pitch refinement and interview techniques.
 
 - **Bioscientific Content Developer**, _Remote_ <span style="color:grey">— Dec 2021 – May 2022</span>
 
