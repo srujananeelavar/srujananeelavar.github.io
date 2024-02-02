@@ -15,7 +15,7 @@ redirect_from:
 
   <span style="color:grey">**Relevant Coursework:** Programming for Scientists, Algorithms and Advanced Data Structures, Essential Mathematics and Statistics, Machine Learning, Computational Genomics, Advanced Microbiology, Modeling and Simulation, Advanced Quantitative Genetics, Bioinformatics Data Integration Practicuum, Computational Medicine, Automation of Scientific Research</span>
 
-  Major GPA: 3.73/4.33
+  <span style="color:grey">Major GPA: 3.73/4.33</span>
 
 - **Bachelor of Engineering in Biotechnology**, Visvesvaraya Technological University, _Bangalore, India_ <span style="color:grey">— Aug 2021</span>
 
