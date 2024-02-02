@@ -31,7 +31,7 @@ redirect_from:
   - Developed a Python pipeline for analyzing genomic variations in Rgg-SHP144 system aiming to identify binding sites and regulon components in _Streptococcus pneumoniae_.
   - Conducting empirical investigations to assess cross-communication dynamics between distinct allelic variants of Rgg-SHP144 within a reporter strain.
 
-- **Graduate Teaching Assistant**, _Pittsburgh, PA_ <span style="color:grey">— Aug 2023 – Dec 2023</span>
+- **Graduate Teaching Assistant**, _Pittsburgh, PA_ <span style="color:grey">— Aug 2023 – Present</span>
 
   _Carnegie Mellon University_
 
